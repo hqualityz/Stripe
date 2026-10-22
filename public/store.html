@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="stylesheet" href="../App.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Connect Business | Store</title>
+  </head>
+  <body>
+    <div class="App">
+      <div class="container">
+        <div class="store-header">
+          <label for="account-id-input">Receiving connected account</label>
+          <input
+            type="text"
+            id="account-id-input"
+            name="accountId"
+            form="checkout-form"
+            placeholder="acct_..."
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="product-info round-border">
+          <img
+            class="product-image"
+            src="tshirt.svg"
+            alt="T-Shirt"
+          />
+          <div class="description">
+            <h3 class="product-name">T-Shirt</h3>
+            <h5 class="product-price" id="product-price">10.99 €</h5>
+          </div>
+          <form id="checkout-form" action="/api/create-store-checkout-session" method="POST">
+            <input type="hidden" id="env-input" name="env" value="sandbox" />
+            <button type="submit" class="button checkout-button">Pay</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="store.js"></script>
+  </body>
+</html>

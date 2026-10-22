@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="stylesheet" href="../App.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Connect Business</title>
+  </head>
+  <body>
+    <div class="env-banner" data-env="sandbox">
+      <span class="env-banner-label">
+        Environment: <strong class="env-banner-current">Sandbox</strong>
+      </span>
+      <label class="env-toggle" title="Live mode is temporarily disabled">
+        <span class="env-toggle-text env-toggle-text-sandbox">Sandbox</span>
+        <span class="env-toggle-switch">
+          <input type="checkbox" id="env-toggle-input" disabled />
+          <span class="env-toggle-slider"></span>
+        </span>
+        <span class="env-toggle-text env-toggle-text-live">Live</span>
+      </label>
+    </div>
+    <div class="App onboarding-app">
+      <div class="container onboarding-page">
+        <div class="logo">Stripe Connect - onboarding flows</div>
+        <p class="discovery-notice">
+          This project is for <strong>product discovery purposes only</strong>. To get access to
+          Stripe Connect, please reach out to&nbsp;&nbsp;<strong>Guillaume Dauphin</strong>.
+        </p>
+
+        <div class="onboarding-columns">
+
+          <!-- Stripe-hosted onboarding -->
+          <div class="onboarding-column" data-account-type="express">
+            <h3 class="onboarding-name">Stripe-hosted onboarding</h3>
+            <p class="onboarding-description">
+              A Stripe-hosted web form with your brand's name, color, and icon. Reads the
+              account's requirements and generates a guided flow, including document upload
+              and real-time verification.
+            </p>
+            <ul class="onboarding-features">
+              <li><strong>Integration effort:</strong> Minimal, go live quickly</li>
+              <li><strong>Customization:</strong> Stripe-branded, limited platform branding</li>
+              <li><strong>Ideal for:</strong> Platforms that want Stripe to handle onboarding</li>
+            </ul>
+
+            <form class="create-account-form form-group">
+              <div class="form-group">
+                <label for="email-express">Email for Connected account:</label>
+                <input type="email" id="email-express" class="email-input" required />
+              </div>
+              <button class="button" type="submit">Create Connect Account</button>
+            </form>
+
+            <div class="account-status-container"></div>
+
+            <button class="button merchant-login-btn hidden">Login</button>
+
+            <div class="storefronts"></div>
+          </div>
+
+          <!-- Embedded onboarding -->
+          <div class="onboarding-column" data-account-type="standard">
+            <h3 class="onboarding-name">Embedded onboarding</h3>
+            <p class="onboarding-description">
+              A themeable onboarding UI embedded directly in your app, so connected accounts
+              never leave your site. Same guided flow, document upload, and real-time
+              verification as Stripe-hosted, with limited Stripe branding.
+            </p>
+            <ul class="onboarding-features">
+              <li><strong>Integration effort:</strong> More effort, still go live quickly</li>
+              <li><strong>Customization:</strong> Highly themeable, limited Stripe branding</li>
+              <li><strong>Ideal for:</strong> Platforms that want a branded flow within their app</li>
+            </ul>
+
+            <form class="create-account-form form-group">
+              <div class="form-group">
+                <label for="email-standard">Email for Connected account:</label>
+                <input type="email" id="email-standard" class="email-input" required />
+              </div>
+              <button class="button" type="submit">Create Connect Account</button>
+            </form>
+
+            <div class="account-status-container"></div>
+
+            <button class="button merchant-login-btn hidden">Login</button>
+
+            <div class="storefronts"></div>
+          </div>
+
+          <!-- API onboarding -->
+          <div class="onboarding-column onboarding-column-wip" data-account-type="custom">
+            <span class="wip-tag">Work in progress</span>
+            <h3 class="onboarding-name">API onboarding</h3>
+            <p class="onboarding-description">
+              Build your own onboarding UI with the Accounts API. Your platform owns identity
+              verification, localization, and error handling, and must review requirements at
+              least every 6 months.
+            </p>
+            <ul class="onboarding-features">
+              <li><strong>Integration effort:</strong> Most effort, can delay going live</li>
+              <li><strong>Customization:</strong> Full control over your own UI</li>
+              <li><strong>Ideal for:</strong> Platforms with resources to build and maintain it</li>
+            </ul>
+
+            <form class="create-account-form form-group">
+              <div class="form-group">
+                <label for="email-custom">Email for Connected account:</label>
+                <input type="email" id="email-custom" class="email-input" disabled required />
+              </div>
+              <button class="button" type="submit" disabled>Create Connect Account</button>
+            </form>
+
+            <div class="account-status-container"></div>
+
+            <button class="button merchant-login-btn hidden" disabled>Login</button>
+
+            <div class="storefronts"></div>
+          </div>
+
+        </div>
+
+        <!-- Row 2: Webstore for a fixed merchant -->
+        <div class="webstore-row">
+          <div class="onboarding-column webstore-card">
+            <div class="webstore-merchant">
+              <h3 class="onboarding-name">Webstore</h3>
+              <p class="webstore-merchant-name">Bradley Ecom</p>
+              <p class="webstore-merchant-meta">testgd123@gmail.com</p>
+              <p class="webstore-merchant-meta webstore-account-id">acct_1UB8zRB2AboFUnC6</p>
+            </div>
+            <div class="product-info round-border webstore-product">
+              <img class="product-image" src="tshirt.svg" alt="T-Shirt" />
+              <div class="description">
+                <h3 class="product-name">T-Shirt</h3>
+                <h5 class="product-price">10.99 €</h5>
+              </div>
+              <form action="/api/create-store-checkout-session" method="POST">
+                <input type="hidden" name="accountId" value="acct_1UB8zRB2AboFUnC6" />
+                <input type="hidden" name="env" value="sandbox" />
+                <button type="submit" class="button checkout-button">Pay</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <script type="module" src="connect.js"></script>
+      </div>
+    </div>
+  </body>
+</html>

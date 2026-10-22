@@ -1,0 +1,22 @@
+{
+  "name": "stripe-sample",
+  "version": "0.1.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@stripe/stripe-js": "^9.0.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "stripe": "^20.4.1",
+    "vite": "^5.2.11"
+  },
+  "devDependencies": {
+    "concurrently": "8.2.2"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"vite --port 3000 --open\" \"node server.js\"",
+    "build": "vite build"
+  }
+}

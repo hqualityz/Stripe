@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="stylesheet" href="../App.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Connect Business | Embedded onboarding</title>
+    <script src="https://connect-js.stripe.com/v1.0/connect.js"></script>
+  </head>
+  <body>
+    <div class="App embedded-onboarding-app">
+      <div class="container embedded-onboarding-container">
+        <div class="logo">Sample Connect Business | Embedded onboarding</div>
+        <a class="button margin-bottom-10" href="/">Back to dashboard</a>
+
+        <div id="onboarding-error" class="hidden"></div>
+        <div id="onboarding-loading">Loading onboarding…</div>
+        <div id="embedded-onboarding-container"></div>
+      </div>
+    </div>
+    <script type="module" src="embedded-onboarding.js"></script>
+  </body>
+</html>

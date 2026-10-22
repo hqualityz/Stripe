@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link rel="stylesheet" href="../App.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Connect Business</title>
+  </head>
+
+  <body>
+    <div class="App">
+      <div class="container">
+        <p id="success" class="message">Your payment was successful</p>
+
+        <div class="account-status">
+          <div class="status-header">
+            <h3>Payment summary</h3>
+          </div>
+          <div class="status-details">
+            <div class="status-item">
+              <span>Amount charged:</span>
+              <span id="amount-total">—</span>
+            </div>
+            <div class="status-item">
+              <span>Payment method:</span>
+              <span id="payment-method">—</span>
+            </div>
+            <div class="status-item">
+              <span>Status:</span>
+              <span id="payment-status">—</span>
+            </div>
+            <div class="status-item">
+              <span>Stripe fee:</span>
+              <span id="stripe-fee">—</span>
+            </div>
+            <div class="status-item">
+              <span>Net to account:</span>
+              <span id="net-amount">—</span>
+            </div>
+            <div class="status-item">
+              <span>Connected account:</span>
+              <span id="account-id">—</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          id="dashboard"
+          href=""
+          class="button"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Go to Connected Account dashboard
+        </a>
+        <a class="button" href="/">Back to products</a>
+      </div>
+    </div>
+    <script type="module" src="./done.js"></script>
+  </body>
+</html>

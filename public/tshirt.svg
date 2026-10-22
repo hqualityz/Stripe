@@ -1,0 +1,51 @@
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#f4f6fb" />
+  <g>
+    <!-- T-shirt silhouette -->
+    <path
+      d="M95,55
+         L120,40
+         L150,52
+         L180,40
+         L205,55
+         L245,90
+         L215,120
+         L195,102
+         L195,250
+         L105,250
+         L105,102
+         L85,120
+         L55,90
+         Z"
+      fill="#1b2a52"
+      stroke="#101b38"
+      stroke-width="3"
+      stroke-linejoin="round"
+    />
+    <!-- collar -->
+    <path
+      d="M120,40 Q150,68 180,40"
+      fill="none"
+      stroke="#101b38"
+      stroke-width="3"
+    />
+    <!-- sleeve seams -->
+    <path d="M95,55 L85,120" fill="none" stroke="#101b38" stroke-width="2" opacity="0.6" />
+    <path d="M205,55 L215,120" fill="none" stroke="#101b38" stroke-width="2" opacity="0.6" />
+  </g>
+
+  <!-- Text on chest -->
+  <text
+    x="150"
+    y="150"
+    text-anchor="middle"
+    font-family="-apple-system, 'Segoe UI', Helvetica, Arial, sans-serif"
+    font-weight="700"
+    font-size="19"
+    fill="#ffffff"
+  >
+    <tspan x="150" dy="0">I'M A TAM,</tspan>
+    <tspan x="150" dy="26">NOT A</tspan>
+    <tspan x="150" dy="26">MAGICIAN</tspan>
+  </text>
+</svg>
